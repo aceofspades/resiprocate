@@ -1,4 +1,8 @@
 language: cpp
+env:
+  global:
+    # CONVERITY_SCAN_TOKEN
+    - secure: "xE7W9MrS4qf1usgtnVDrgNnZAUIuD6cq8MrvkbEuWVOTopmtbkMhZv60kQNIrFKUDcuv+ismIYBzymPh9EhjwNI1Dfu4jzasWvhlRFj0YTfz6F0+V2xjI9EJIXglfDBhJVhyf0Zngf0Czg1iQRRXuInZSStVdY+twsXqo6XL7Wc="
 before_install:
  - sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu/ saucy main universe"
  - sudo apt-get update -qq

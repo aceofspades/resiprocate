@@ -18,7 +18,7 @@ PATH=/tmp/coverity-scan/cov-analysis/bin:${PATH} \
 tar czf resiprocate-coverity.tgz cov-int
 curl \
   --form project=reSIProcate-travis \
-  --form token=-b1Ha7aHOgnjrbBPFWrzz2w \
+  --form token=$CONVERITY_SCAN_TOKEN \
   --form email=doug316@gmail.com \
   --form file=@resiprocate-coverity.tgz \
   --form version=unknown \
@@ -32,4 +32,3 @@ curl \
 # it to evaluate more code paths through the stack itself
 
 make check
-
