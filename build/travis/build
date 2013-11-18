@@ -17,9 +17,9 @@ PATH=/tmp/coverity-scan/cov-analysis/bin:${PATH} \
 # submit the coverity artifacts to their scanning service:
 tar czf resiprocate-coverity.tgz cov-int
 curl \
-  --form project=reSIProcate \
-  --form token=-OmW1wnKp9CVC7iGPDUlqw \
-  --form email=daniel@pocock.com.au \
+  --form project=reSIProcate-travis \
+  --form token=-b1Ha7aHOgnjrbBPFWrzz2w \
+  --form email=doug316@gmail.com \
   --form file=@resiprocate-coverity.tgz \
   --form version=unknown \
   --form description="Travis auto build" \
