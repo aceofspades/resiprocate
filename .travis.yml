@@ -1,16 +1,23 @@
 language: cpp
 env:
   global:
-    # CONVERITY_SCAN_TOKEN
-    - secure: "xE7W9MrS4qf1usgtnVDrgNnZAUIuD6cq8MrvkbEuWVOTopmtbkMhZv60kQNIrFKUDcuv+ismIYBzymPh9EhjwNI1Dfu4jzasWvhlRFj0YTfz6F0+V2xjI9EJIXglfDBhJVhyf0Zngf0Czg1iQRRXuInZSStVdY+twsXqo6XL7Wc="
+    # COVERITY_SCAN_TOKEN
+    - secure: "l7ulGzxnEBmGvvgx+r4gyS0rvzb0KC7D6v3Xp550lv1d534wq5GzxM/kTkmIynXPjQJpuVZBoI7NrlOJjvCf4Euj/dzQkQ9oDPL41YLSslniMmjEkSTGapZQxT2ONiZnzIziJs2vRKz63HPeR1nRGcYElvROGX3rRtLlT9aULlU="
+addons:
+  coverity:
+    build_utility_version: 6.6.1
+    project:
+      name: reSIProcate-travis
+      version: 0.0
+      description: Travis-CI Build
+    email: doug316@gmail.com
 before_install:
  - sudo add-apt-repository -y "deb http://archive.ubuntu.com/ubuntu/ saucy main universe"
  - sudo apt-get update -qq
  - sudo apt-get install -qq gperf libasio-dev libboost-dev libc-ares-dev libdb++-dev libpopt-dev libssl-dev perl libmysqlclient-dev libradiusclient-ng-dev libcppunit-dev autotools-dev libpcre3-dev libxerces-c-dev curl libcajun-dev
- - ./build/travis/coverity-setup
 compiler:
   - gcc
-script:
+before_script:
   - ./build/travis/bootstrap
   - ./build/travis/configure
-  - ./build/travis/build
+script: make check
