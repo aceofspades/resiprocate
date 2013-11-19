@@ -4,7 +4,7 @@ env:
     # COVERITY_SCAN_TOKEN
     - secure: "l7ulGzxnEBmGvvgx+r4gyS0rvzb0KC7D6v3Xp550lv1d534wq5GzxM/kTkmIynXPjQJpuVZBoI7NrlOJjvCf4Euj/dzQkQ9oDPL41YLSslniMmjEkSTGapZQxT2ONiZnzIziJs2vRKz63HPeR1nRGcYElvROGX3rRtLlT9aULlU="
 addons:
-  coverity:
+  coverity_scan:
     build_utility_version: 6.6.1
     project:
       name: reSIProcate-travis
